@@ -40,14 +40,13 @@
 
     .btn {
       display: inline-block;
-      margin-top: 25px;
       padding: 15px 25px;
       background: #16a34a;
       color: white;
       font-weight: bold;
       text-decoration: none;
       border-radius: 10px;
-      transition: 0.2s;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .btn:hover {
@@ -55,9 +54,27 @@
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
 
+    .secondary {
+      background: #0ea5e9;
+    }
+
+    .outline {
+      background: transparent;
+      color: #16a34a;
+      border: 2px solid #16a34a;
+    }
+
+    .buttons {
+      margin-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
       margin-top: 30px;
     }
@@ -67,6 +84,11 @@
       padding: 20px;
       border-radius: 12px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
     }
 
     .highlight {
@@ -82,84 +104,135 @@
       color: #94a3b8;
       font-size: 0.9em;
     }
+
+    /* Animaciones */
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hidden {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
+<div class="container">
 
-    <div class="hero">
-      <h1>Atención de salud en tu casa, cuando la necesitás</h1>
-      <p>
-        En Curanar conectamos personas con profesionales de salud para atención rápida y confiable a domicilio.
-      </p>
+  <div class="hero">
+    <h1 class="fade-in">Atención de salud en tu casa, cuando la necesitás</h1>
+    <p class="fade-in">
+      En Curanar conectamos personas con profesionales de salud para atención rápida y confiable a domicilio.
+    </p>
 
+    <div class="buttons fade-in">
       <a class="btn" href="https://wa.me/5491170673186" target="_blank">
         Solicitar atención por WhatsApp
       </a>
 
-      <p style="margin-top:10px; font-size:0.9em;">
-        Disponible en CABA y Vicente López
-      </p>
-    </div>
+      <a class="btn secondary" href="profesionales.html">
+        Conocé a los profesionales
+      </a>
 
-    <h2>¿Qué servicios ofrecemos?</h2>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Enfermería a domicilio</h3>
-        <p>Atención profesional en la comodidad de tu hogar.</p>
-      </div>
-
-      <div class="card">
-        <h3>Aplicación de inyecciones</h3>
-        <p>Servicio seguro y rápido por personal capacitado.</p>
-      </div>
-
-      <div class="card">
-        <h3>Control de presión</h3>
-        <p>Seguimiento y control para tu tranquilidad.</p>
-      </div>
-
-      <div class="card">
-        <h3>Curaciones</h3>
-        <p>Tratamiento de heridas con cuidado profesional.</p>
-      </div>
-
-      <div class="card">
-        <h3>Acompañamiento</h3>
-        <p>Asistencia para personas que necesitan apoyo en el día a día.</p>
-      </div>
-    </div>
-
-    <div class="highlight">
-      <h2>¿Cómo funciona?</h2>
-      <p>
-        1. Nos escribís por WhatsApp<br>
-        2. Nos contás qué necesitás y tu ubicación<br>
-        3. Coordinamos un profesional para ayudarte lo antes posible
-      </p>
-    </div>
-
-    <h2>Confianza y rapidez</h2>
-    <p>
-      Sabemos que cuando necesitás atención de salud, el tiempo es importante.
-      Por eso trabajamos para brindarte una respuesta rápida con profesionales confiables.
-    </p>
-
-    <div class="hero">
-      <h2>¿Necesitás atención ahora?</h2>
-      <a class="btn" href="https://wa.me/5491170673186" target="_blank">
-        Escribir ahora
+      <a class="btn outline" href="unite.html">
+        ¿Sos profesional? Unite aquí
       </a>
     </div>
 
-    <footer>
-      © 2026 - Curanar - Un producto de ESVIGI
-    </footer>
-
+    <p style="margin-top:10px; font-size:0.9em;">
+      Disponible en CABA y Vicente López
+    </p>
   </div>
 
+  <h2 class="hidden">¿Qué servicios ofrecemos?</h2>
+
+  <div class="grid">
+    <div class="card hidden">
+      <h3>Enfermería a domicilio</h3>
+      <p>Atención profesional en la comodidad de tu hogar.</p>
+    </div>
+
+    <div class="card hidden">
+      <h3>Aplicación de inyecciones</h3>
+      <p>Servicio seguro y rápido por personal capacitado.</p>
+    </div>
+
+    <div class="card hidden">
+      <h3>Control de presión</h3>
+      <p>Seguimiento y control para tu tranquilidad.</p>
+    </div>
+
+    <div class="card hidden">
+      <h3>Curaciones</h3>
+      <p>Tratamiento de heridas con cuidado profesional.</p>
+    </div>
+
+    <div class="card hidden">
+      <h3>Acompañamiento</h3>
+      <p>Asistencia para personas que necesitan apoyo en el día a día.</p>
+    </div>
+  </div>
+
+  <div class="highlight hidden">
+    <h2>¿Cómo funciona?</h2>
+    <p>
+      1. Nos escribís por WhatsApp<br>
+      2. Nos contás qué necesitás y tu ubicación<br>
+      3. Coordinamos un profesional para ayudarte lo antes posible
+    </p>
+  </div>
+
+  <h2 class="hidden">Confianza y rapidez</h2>
+  <p class="hidden">
+    Sabemos que cuando necesitás atención de salud, el tiempo es importante.
+    Por eso trabajamos para brindarte una respuesta rápida con profesionales confiables.
+  </p>
+
+  <div class="hero hidden">
+    <h2>¿Necesitás atención ahora?</h2>
+    <a class="btn" href="https://wa.me/5491170673186" target="_blank">
+      Escribir ahora
+    </a>
+  </div>
+
+  <footer>
+    © 2026 - Curanar - Un producto de ESVIGI
+  </footer>
+
+</div>
+
+<script>
+  const elements = document.querySelectorAll('.hidden');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  });
+
+  elements.forEach(el => observer.observe(el));
+</script>
+
 </body>
+</html>
 </html>
