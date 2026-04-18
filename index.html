@@ -80,24 +80,25 @@
     }
 
     /* HERO */
-    .hero {
-      display: flex;
-      align-items: center;
+   .hero {
+      display: flex;              /* 👈 esto faltaba */
       justify-content: space-between;
-      padding: 70px 40px;
+      align-items: flex-start;   /* 👈 alinea arriba */
+      
       max-width: 1200px;
-      margin: auto;
+      margin: 0 auto;
+      padding: 70px 40px;
       gap: 40px;
     }
 
     .hero-text {
-      flex: 1;
+      max-width: 520px;
     }
 
     .hero-text h1 {
       font-size: 54px;
       line-height: 1.1;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     .hero-text h1 span {
@@ -155,36 +156,47 @@
     /* HERO IMAGE */
     .hero-image {
       flex: 1;
-      position: relative;
+      display: flex;
+      justify-content: flex-end; /* 👈 esto la empuja a la derecha */
+      margin-right: 40px;
+    }
+
+    .hero-img {
+      width: 100%;
+      border-radius: 20px;
+      display: block;
     }
 
     .mock {
-      width: 100%;
-      border-radius: 20px;
-      background: linear-gradient(135deg, #d1fae5, #ecfeff);
-      padding: 20px;
       position: relative;
+      width: 420px;
+      margin-right: 150px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #d1fae5, #ecfeff);
+      padding: 12px;
+      transform: rotate(-2deg); /* 👈 leve inclinación pro */
+      box-shadow: 0 30px 60px rgba(0,0,0,0.12);
     }
 
     .card {
-      background: white;
-      padding: 15px;
-      border-radius: 14px;
       position: absolute;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    }
-
-    .card.top {
-      top: 20px;
-      right: 20px;
-      font-size: 13px;
-      color: #16a34a;
-    }
-
-    .card.bottom {
-      bottom: 20px;
-      left: 20px;
+      background: white;
+      padding: 10px 14px;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
       font-size: 14px;
+    }
+
+    /* arriba derecha */
+    .card.top {
+      top: -10px;
+      right: -10px;
+    }
+
+    /* abajo izquierda */
+    .card.bottom {
+      bottom: -15px;
+      left: -15px;
     }
 
     /* SERVICES */
