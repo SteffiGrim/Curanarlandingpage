@@ -334,23 +334,14 @@
     z-index: 0;
   }
 
-  @media (max-width: 768px) {
-
-  .steps::-webkit-scrollbar {
-  display: none;
-  }
-
   .step {
-    min-width: 250px;
-    flex-shrink: 0;
-    scroll-snap-align: start;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+    margin: auto;
+    text-align: center;
   }
 
-  .line {
-    display: none;
-  }
-
-  }
   .step h3 {
     margin-top: 20px;
     font-size: 18px;
@@ -749,7 +740,6 @@
     <div class="hero-image fade-in">
       <div class="mock">
         <img src="img/imagen del foot.png" alt="Profesional de salud" class="hero-img">
-        <div class="card top">🟢 Disponible ahora</div>
       </div>
     </div>
 
