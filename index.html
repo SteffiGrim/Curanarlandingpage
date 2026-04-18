@@ -153,6 +153,17 @@
       color: #0f766e;
     }
 
+    .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     /* HERO IMAGE */
     .hero-image {
       flex: 1;
@@ -444,7 +455,7 @@
     box-shadow: 0 20px 40px rgba(0,0,0,0.08);
   }
 
-@media (max-width: 900px) {
+    @media (max-width: 900px) {
 
   .hero {
     flex-direction: column;
@@ -501,16 +512,6 @@
     font-size: 12px;
     padding: 8px 10px;
   }
-    .fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
-  }
-
-  .fade-in.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
   </style>
 </head>
@@ -539,7 +540,7 @@
   <!-- HERO -->
   <section class="hero">
 
-    <div class="hero-text">
+    <div class="hero-text fade-in" >
       <h1>Cuidado de salud <span>profesional</span> en tu hogar</h1>
 
       <p>
@@ -558,7 +559,7 @@
       </div>
     </div>
 
-    <div class="hero-image">
+    <div class="hero-image fade-in">
       <div class="mock">
         <img src="img/landing image.png" alt="Profesional de salud" class="hero-img">
         <div class="card top">🟢 Disponible ahora</div>
@@ -568,11 +569,11 @@
   </section>
 
   <!-- SERVICES -->
-  <section class="services">
+  <section class="services fade-in">
     <h2>¿Qué servicios ofrecemos?</h2>
     <p>Nuestros profesionales están capacitados para brindarte atención en tu hogar.</p>
 
-    <div class="grid">
+    <div class="grid fade-in">
 
       <div class="service-card">
         <div class="icon">💉</div>
@@ -626,9 +627,9 @@
   </section>
 
   <!-- HOW IT WORKS -->
-<section class="how-it-works">
+<section class="how-it-works fade-in">
 
-  <div class="container">
+  <div class="container fade-in">
 
     <p class="section-tag">CÓMO FUNCIONA</p>
     <h2 class="section-title">Simple y rápido</h2>
@@ -726,7 +727,7 @@
     </div>
 
     <div class="pro-right">
-      <div class="mock-card"></div>
+      <div class="mock-card"> <img src="img/imagen del foot.png" alt="Profesional de salud" class="mock-card"></div>
     </div>
 
   </div>
