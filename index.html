@@ -1,82 +1,218 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Curanar</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f1f5f9;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    }
+
+    body {
+      background: #f6fbfb;
       color: #0f172a;
     }
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    h1 {
-      font-size: 2.5em;
-    }
-
-    p {
-      color: #475569;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #dcfce7;
-      color: #166534;
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: 0.9em;
-      margin-bottom: 10px;
-    }
-
-    .buttons {
-      margin-top: 25px;
+    /* NAVBAR */
+    .navbar {
       display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 40px;
+      background: white;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
       gap: 10px;
+      font-weight: 700;
+    }
+
+    .logo-badge {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #0f766e;
+      display: flex;
+      align-items: center;
       justify-content: center;
-      flex-wrap: wrap;
+      color: white;
+      font-size: 14px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      font-size: 14px;
+      color: #334155;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
     }
 
     .btn {
-      padding: 15px 25px;
-      border-radius: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 600;
       text-decoration: none;
-      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: #0f766e;
       color: white;
-      background: #16a34a;
     }
 
-    .secondary { background: #0ea5e9; }
-    .outline {
-      background: transparent;
+    .btn-ghost {
+      color: #0f766e;
+    }
+
+    /* HERO */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 70px 40px;
+      max-width: 1200px;
+      margin: auto;
+      gap: 40px;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text h1 {
+      font-size: 54px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero-text h1 span {
+      color: #0f766e;
+    }
+
+    .hero-text p {
+      font-size: 16px;
+      color: #475569;
+      margin-bottom: 25px;
+      max-width: 500px;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 25px;
+    }
+
+    .badge {
+      background: white;
+      border: 1px solid #e2e8f0;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-big {
+      padding: 14px 18px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .primary {
+      background: #0f766e;
+      color: white;
+    }
+
+    .secondary {
+      background: #e0f2f1;
+      color: #0f766e;
+    }
+
+    /* HERO IMAGE */
+    .hero-image {
+      flex: 1;
+      position: relative;
+    }
+
+    .mock {
+      width: 100%;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #d1fae5, #ecfeff);
+      padding: 20px;
+      position: relative;
+    }
+
+    .card {
+      background: white;
+      padding: 15px;
+      border-radius: 14px;
+      position: absolute;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .card.top {
+      top: 20px;
+      right: 20px;
+      font-size: 13px;
       color: #16a34a;
-      border: 2px solid #16a34a;
     }
 
-    .section {
-      margin-top: 50px;
+    .card.bottom {
+      bottom: 20px;
+      left: 20px;
+      font-size: 14px;
+    }
+
+    /* SERVICES */
+    .services {
+      max-width: 1200px;
+      margin: auto;
+      padding: 80px 40px;
+    }
+
+    .services h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .services p {
+      text-align: center;
+      color: #475569;
+      margin-bottom: 40px;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 20px;
     }
 
-    .card {
+    .service-card {
       background: white;
       padding: 20px;
       border-radius: 16px;
@@ -84,140 +220,462 @@
       transition: 0.2s;
     }
 
-    .card:hover {
+    .service-card:hover {
       transform: translateY(-5px);
     }
 
     .icon {
-      font-size: 1.8em;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: #e0f2f1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin-bottom: 10px;
+      font-size: 18px;
     }
+
+    .service-card h3 {
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .service-card p {
+      font-size: 13px;
+      color: #475569;
+      text-align: left;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text h1 {
+        font-size: 38px;
+      }
+    }
+      /* CONTAINER */
+  .container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+  }
+
+  /* SECTION GLOBAL */
+  .section-title {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .section-sub {
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto 60px;
+    text-align: center;
+  }
+
+  .section-tag {
+    color: #0f766e;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  /* HOW IT WORKS */
+  .how-it-works {
+    padding: 100px 0;
+    background: #f8fdfd;
+  }
+
+  .steps {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .line {
+    position: absolute;
+    top: 35px;
+    left: 8%;
+    right: 8%;
+    height: 2px;
+    background: #d1fae5;
+    z-index: 0;
+  }
+
+  .step {
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .step h3 {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+
+  .step p {
+    font-size: 14px;
+    color: #64748b;
+    margin-top: 8px;
+  }
+
+  .circle {
+    width: 70px;
+    height: 70px;
+    background: white;
+    border-radius: 50%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border: 1px solid #e2e8f0;
+  }
+
+  .circle span {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #0f766e;
+    color: white;
+    font-size: 12px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* PRO SECTION */
+  .pro-section {
+    padding: 120px 0;
+    background: white;
+  }
+
+  .pro-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .pro-left .section-sub {
+    text-align: left;
+    margin-left: 0;
+  }
+
+  .pro-list {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .pro-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .pro-icon {
+    width: 42px;
+    height: 42px;
+    background: #ccfbf1;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  .pro-item h4 {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .pro-item p {
+    font-size: 14px;
+    color: #64748b;
+  }
+
+  .btn-pro {
+    display: inline-block;
+    margin-top: 35px;
+    background: #0f766e;
+    color: white;
+    padding: 14px 26px;
+    border-radius: 12px;
+    font-weight: 600;
+    box-shadow: 0 10px 20px rgba(15,118,110,0.2);
+  }
+
+  /* MOCK DERECHA */
+  .mock-card {
+    width: 100%;
+    height: 350px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #d1fae5, #ecfeff);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
 
     .steps {
-      display: flex;
       flex-direction: column;
-      gap: 15px;
-      margin-top: 20px;
+      align-items: center;
     }
 
-    .step {
-      background: white;
-      padding: 15px;
-      border-radius: 12px;
+    .line {
+      display: none;
     }
 
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      color: #94a3b8;
+    .pro-grid {
+      grid-template-columns: 1fr;
     }
 
-    .hidden {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease;
+    .pro-right {
+      order: -1;
     }
 
-    .show {
-      opacity: 1;
-      transform: translateY(0);
+    .section-title {
+      font-size: 32px;
     }
+  }
   </style>
 </head>
 
 <body>
 
-<div class="container">
+  <!-- NAV -->
+  <div class="navbar">
+    <div class="logo">
+      <div class="logo-badge">❤</div>
+      Curanar
+    </div>
 
-  <div class="hero">
-    <div class="badge">Atención rápida en tu zona</div>
-    <h1>Profesionales de salud en tu casa</h1>
-    <p>Coordinamos atención a domicilio de forma rápida, confiable y simple.</p>
+    <div class="nav-links">
+      <a>Servicios</a>
+      <a>Cómo funciona</a>
+      <a>Para profesionales</a>
+    </div>
 
-    <div class="buttons">
-      <a class="btn" href="https://wa.me/5491170673186">Solicitar atención</a>
-      <a class="btn outline" href="https://curanarunite.netlify.app/">¿Sos profesional? Unite aquí</a>
+    <div class="nav-actions">
+      <a class="btn btn-ghost">Soy Profesional</a>
+      <a class="btn btn-primary">Buscar profesional</a>
     </div>
   </div>
 
-  <div class="section hidden">
-    <h2>Servicios disponibles</h2>
-    <div class="grid">
-      <div class="card">
-        <div class="icon">🩺</div>
-        <h3>Enfermería</h3>
-        <p>Atención profesional en tu hogar</p>
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-text">
+      <h1>Cuidado de salud <span>profesional</span> en tu hogar</h1>
+
+      <p>
+        Conectamos pacientes con profesionales de salud para atención domiciliaria.
+        Vacunas, curaciones, inyecciones y más.
+      </p>
+
+      <div class="badges">
+        <div class="badge">⭐ 4.9 calificación</div>
+        <div class="badge">📍 Atención a domicilio</div>
+        <div class="badge">🛡 Profesionales verificados</div>
       </div>
 
-      <div class="card">
+      <div class="hero-buttons">
+        <a class="btn-big primary">Soy Paciente — Buscar profesional</a>
+        <a class="btn-big secondary">Soy Profesional — Registrarme</a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <div class="mock">
+        <div class="card top">🟢 Disponible ahora</div>
+        <div class="card bottom">⭐ 4.9 (500 reseñas)</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services">
+    <h2>¿Qué servicios ofrecemos?</h2>
+    <p>Nuestros profesionales están capacitados para brindarte atención en tu hogar.</p>
+
+    <div class="grid">
+
+      <div class="service-card">
         <div class="icon">💉</div>
         <h3>Inyecciones</h3>
-        <p>Aplicación segura y rápida</p>
+        <p>Aplicación segura de medicamentos inyectables.</p>
       </div>
 
-      <div class="card">
-        <div class="icon">❤️</div>
-        <h3>Control de presión</h3>
-        <p>Seguimiento y control</p>
+      <div class="service-card">
+        <div class="icon">🩺</div>
+        <h3>Enfermería</h3>
+        <p>Atención profesional en domicilio.</p>
       </div>
 
-      <div class="card">
+      <div class="service-card">
         <div class="icon">🩹</div>
         <h3>Curaciones</h3>
-        <p>Tratamiento de heridas</p>
+        <p>Limpieza y tratamiento de heridas.</p>
       </div>
 
-      <div class="card">
-        <div class="icon">🤝</div>
-        <h3>Acompañamiento</h3>
-        <p>Apoyo en el día a día</p>
+      <div class="service-card">
+        <div class="icon">📊</div>
+        <h3>Signos vitales</h3>
+        <p>Control de presión, oxígeno y temperatura.</p>
       </div>
 
-      <div class="card">
-        <div class="icon">💆‍♂️</div>
-        <h3>Masajes</h3>
-        <p>Relajación y bienestar</p>
+      <div class="service-card">
+        <div class="icon">💊</div>
+        <h3>Medicamentos</h3>
+        <p>Administración segura bajo indicación médica.</p>
       </div>
+
+      <div class="service-card">
+        <div class="icon">❤️</div>
+        <h3>Cuidados post-operatorios</h3>
+        <p>Acompañamiento tras cirugías.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">👵</div>
+        <h3>Adulto mayor</h3>
+        <p>Cuidado y acompañamiento domiciliario.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🌬</div>
+        <h3>Nebulizaciones</h3>
+        <p>Tratamientos respiratorios en casa.</p>
+      </div>
+
     </div>
-  </div>
+  </section>
 
-  <div class="section hidden">
-    <h2>¿Cómo funciona?</h2>
+  <!-- HOW IT WORKS -->
+<section class="how-it-works">
+
+  <div class="container">
+
+    <p class="section-tag">CÓMO FUNCIONA</p>
+    <h2 class="section-title">Simple y rápido</h2>
+    <p class="section-sub">
+      En pocos pasos podés tener un enfermero profesional en tu casa.
+    </p>
+
     <div class="steps">
-      <div class="step">1. Escribís por WhatsApp</div>
-      <div class="step">2. Nos contás qué necesitás</div>
-      <div class="step">3. Coordinamos un profesional</div>
+
+      <div class="line"></div>
+
+      <div class="step">
+        <div class="circle">🔍<span>1</span></div>
+        <h3>Buscá un profesional</h3>
+        <p>Ingresá tu ubicación y encontrá enfermeros disponibles en tiempo real.</p>
+      </div>
+
+      <div class="step">
+        <div class="circle">📅<span>2</span></div>
+        <h3>Elegí y reservá</h3>
+        <p>Revisá perfiles, calificaciones y reservá el horario que prefieras.</p>
+      </div>
+
+      <div class="step">
+        <div class="circle">💳<span>3</span></div>
+        <h3>Pagá seguro</h3>
+        <p>Pagos online con múltiples medios y protección total.</p>
+      </div>
+
+      <div class="step">
+        <div class="circle">🏠<span>4</span></div>
+        <h3>Atención en casa</h3>
+        <p>Recibí al profesional y calificá el servicio al finalizar.</p>
+      </div>
+
     </div>
+
   </div>
+</section>
 
-  <div class="section hidden">
-    <h2>Confianza y rapidez</h2>
-    <p>Trabajamos con profesionales confiables para brindarte atención cuando más lo necesitás.</p>
-     <p>Todos los datos, tanto de profesionales como de pacientes, son privados. Es nuestra prioridad la privacidad de nuestros usuarios.</p>
+<!-- PRO SECTION -->
+<section class="pro-section">
+
+  <div class="container pro-grid">
+
+    <div class="pro-left">
+      <p class="section-tag">PARA PROFESIONALES</p>
+
+      <h2 class="section-title">
+        ¿Sos profesional de la salud? Unite a Curana
+      </h2>
+
+      <p class="section-sub">
+        Ofrecé tus servicios a domicilio, manejá tu agenda con libertad y conectá con pacientes.
+      </p>
+
+      <div class="pro-list">
+
+        <div class="pro-item">
+          <div class="pro-icon">💰</div>
+          <div>
+            <h4>Ingresos flexibles</h4>
+            <p>Definí tus tarifas y horarios.</p>
+          </div>
+        </div>
+
+        <div class="pro-item">
+          <div class="pro-icon">🕒</div>
+          <div>
+            <h4>Control total</h4>
+            <p>Activá tu disponibilidad cuando quieras.</p>
+          </div>
+        </div>
+
+        <div class="pro-item">
+          <div class="pro-icon">📈</div>
+          <div>
+            <h4>Más pacientes</h4>
+            <p>Mejor reputación = más oportunidades.</p>
+          </div>
+        </div>
+
+        <div class="pro-item">
+          <div class="pro-icon">✔</div>
+          <div>
+            <h4>Elegí trabajos</h4>
+            <p>Aceptá o rechazá solicitudes.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <a class="btn-pro">Registrarme como Profesional</a>
+
+    </div>
+
+    <div class="pro-right">
+      <div class="mock-card"></div>
+    </div>
+
   </div>
-
-  <div class="hero hidden">
-    <h2>¿Necesitás atención ahora?</h2>
-    <a class="btn" href="https://wa.me/5491170673186">Escribir ahora</a>
-  </div>
-
-  <footer>
-    © 2026 - Curanar - Un producto de ESVIGI
-  </footer>
-
-</div>
-
-<script>
-  const elements = document.querySelectorAll('.hidden');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
-    });
-  });
-  elements.forEach(el => observer.observe(el));
-</script>
+</section>
 
 </body>
 </html>
