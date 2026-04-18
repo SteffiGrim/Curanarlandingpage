@@ -2,14 +2,14 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Curanar - Atención de salud a domicilio</title>
+  <title>Curanar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background: #f8fafc;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f1f5f9;
       color: #0f172a;
     }
 
@@ -21,16 +21,10 @@
 
     h1 {
       font-size: 2.5em;
-      margin-bottom: 15px;
-    }
-
-    h2 {
-      margin-top: 40px;
     }
 
     p {
       color: #475569;
-      font-size: 1.1em;
     }
 
     .hero {
@@ -38,93 +32,90 @@
       padding: 60px 20px;
     }
 
-    .btn {
+    .badge {
       display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.9em;
+      margin-bottom: 10px;
+    }
+
+    .buttons {
+      margin-top: 25px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
       padding: 15px 25px;
-      background: #16a34a;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
       border-radius: 10px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+      font-weight: bold;
+      color: white;
+      background: #16a34a;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-
-    .secondary {
-      background: #0ea5e9;
-    }
-
+    .secondary { background: #0ea5e9; }
     .outline {
       background: transparent;
       color: #16a34a;
       border: 2px solid #16a34a;
     }
 
-    .buttons {
-      margin-top: 25px;
-      display: flex;
-      flex-direction: row;
-      gap: 10px;
-      justify-content: center;
-      flex-wrap: wrap;
+    .section {
+      margin-top: 50px;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
-      margin-top: 30px;
     }
 
     .card {
       background: white;
       padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease;
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      transition: 0.2s;
     }
 
     .card:hover {
       transform: translateY(-5px);
     }
 
-    .highlight {
-      background: #ecfdf5;
-      padding: 30px;
+    .icon {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .step {
+      background: white;
+      padding: 15px;
       border-radius: 12px;
-      margin-top: 40px;
     }
 
     footer {
       text-align: center;
       margin-top: 60px;
       color: #94a3b8;
-      font-size: 0.9em;
-    }
-
-    /* Animaciones */
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeIn 1s ease forwards;
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
 
     .hidden {
       opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
     }
 
     .show {
@@ -139,84 +130,75 @@
 <div class="container">
 
   <div class="hero">
-    <h1 class="fade-in">Atención de salud en tu casa, cuando la necesitás</h1>
-    <p class="fade-in">
-      En Curanar conectamos personas con profesionales de salud para atención rápida y confiable a domicilio.
-    </p>
+    <div class="badge">Atención rápida en tu zona</div>
+    <h1>Profesionales de salud en tu casa</h1>
+    <p>Coordinamos atención a domicilio de forma rápida, confiable y simple.</p>
 
-    <div class="buttons fade-in">
-      <a class="btn" href="https://wa.me/5491170673186" target="_blank">
-        Solicitar atención
-      </a>
-
-      <a class="btn secondary" href="https://curanarprofesionales.netlify.app">
-        Conocé a los profesionales
-      </a>
-
-      <a class="btn outline" href="https://curanarunite.netlify.app/">
-        ¿Sos profesional? Unite aquí
-      </a>
-    </div>
-
-    <p style="margin-top:10px; font-size:0.9em;">
-      Disponible en CABA y Vicente López
-    </p>
-  </div>
-
-  <h2 class="hidden">¿Qué servicios ofrecemos?</h2>
-
-  <div class="grid">
-    <div class="card hidden">
-      <h3>Enfermería a domicilio</h3>
-      <p>Atención profesional en la comodidad de tu hogar.</p>
-    </div>
-
-    <div class="card hidden">
-      <h3>Aplicación de inyecciones</h3>
-      <p>Servicio seguro y rápido por personal capacitado.</p>
-    </div>
-
-    <div class="card hidden">
-      <h3>Control de presión</h3>
-      <p>Seguimiento y control para tu tranquilidad.</p>
-    </div>
-
-    <div class="card hidden">
-      <h3>Curaciones</h3>
-      <p>Tratamiento de heridas con cuidado profesional.</p>
-    </div>
-
-    <div class="card hidden">
-      <h3>Masajista a domicilio</h3>
-      <p>Relajación y bienestar en la comodidad de tu hogar.</p>
-    </div>
-
-    <div class="card hidden">
-      <h3>Acompañamiento</h3>
-      <p>Asistencia para personas que necesitan apoyo en el día a día.</p>
+    <div class="buttons">
+      <a class="btn" href="https://wa.me/5491170673186">Solicitar atención</a>
+      <a class="btn secondary" href="profesionales.html">Ver profesionales</a>
+      <a class="btn outline" href="unite.html">Sumarte</a>
     </div>
   </div>
 
-  <div class="highlight hidden">
+  <div class="section hidden">
+    <h2>Servicios disponibles</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="icon">🩺</div>
+        <h3>Enfermería</h3>
+        <p>Atención profesional en tu hogar</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">💉</div>
+        <h3>Inyecciones</h3>
+        <p>Aplicación segura y rápida</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">❤️</div>
+        <h3>Control de presión</h3>
+        <p>Seguimiento y control</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🩹</div>
+        <h3>Curaciones</h3>
+        <p>Tratamiento de heridas</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🤝</div>
+        <h3>Acompañamiento</h3>
+        <p>Apoyo en el día a día</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">💆‍♂️</div>
+        <h3>Masajes</h3>
+        <p>Relajación y bienestar</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section hidden">
     <h2>¿Cómo funciona?</h2>
-    <p>
-      1. Nos escribís por WhatsApp<br>
-      2. Nos contás qué necesitás y tu ubicación<br>
-      3. Coordinamos un profesional para ayudarte lo antes posible
-    </p>
+    <div class="steps">
+      <div class="step">1. Escribís por WhatsApp</div>
+      <div class="step">2. Nos contás qué necesitás</div>
+      <div class="step">3. Coordinamos un profesional</div>
+    </div>
   </div>
 
-  <h2 class="hidden">Confianza y rapidez</h2>
-  <p class="hidden">
-    Sabemos que cuando necesitás atención de salud, el tiempo es importante.
-    Por eso trabajamos para brindarte una respuesta rápida con profesionales confiables.
-  </p>
+  <div class="section hidden">
+    <h2>Confianza y rapidez</h2>
+    <p>Trabajamos con profesionales confiables para brindarte atención cuando más lo necesitás.</p>
+  </div>
 
   <div class="hero hidden">
     <h2>¿Necesitás atención ahora?</h2>
-    <a class="btn" href="https://wa.me/5491170673186" target="_blank">
-      Escribir ahora
-    </a>
+    <a class="btn" href="https://wa.me/5491170673186">Escribir ahora</a>
   </div>
 
   <footer>
@@ -227,7 +209,6 @@
 
 <script>
   const elements = document.querySelectorAll('.hidden');
-
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -235,10 +216,8 @@
       }
     });
   });
-
   elements.forEach(el => observer.observe(el));
 </script>
 
 </body>
-</html>
 </html>
