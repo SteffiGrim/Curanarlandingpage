@@ -667,6 +667,14 @@
         display: none;
       }
     }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    section {
+      scroll-margin-top: 80px;
+    }
   </style>
 </head>
 
@@ -684,9 +692,9 @@
   </div>
 
   <div class="nav-links">
-    <a>Servicios</a>
-    <a>Cómo funciona</a>
-    <a>Para profesionales</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#como-funciona">Cómo funciona</a>
+    <a href="#profesionales">Para profesionales</a>
 
     <div class="nav-actions mobile">
       <a class="btn btn-ghost" href="https://curanarunite.netlify.app/">Soy Profesional</a>
@@ -734,7 +742,7 @@
   </section>
 
   <!-- SERVICES -->
-  <section class="services fade-in">
+    <section id="servicios" class="services fade-in">
     <h2>¿Qué servicios ofrecemos?</h2>
     <p>Nuestros profesionales están capacitados para brindarte atención en tu hogar.</p>
 
@@ -792,7 +800,7 @@
   </section>
 
   <!-- HOW IT WORKS -->
-<section class="how-it-works fade-in">
+  <section id="como-funciona" class="how-it-works fade-in">
 
   <div class="container fade-in">
 
@@ -836,7 +844,7 @@
 </section>
 
 <!-- PRO SECTION -->
-<section class="pro-section">
+<section id="profesionales" class="pro-section">
 
   <div class="container pro-grid">
 
@@ -920,6 +928,12 @@
     navLinks.classList.remove("active");
     overlay.classList.remove("active");
   });
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+      overlay.classList.remove("active");
+    });
+});
 </script>
 
 </body>
